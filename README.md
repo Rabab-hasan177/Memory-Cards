@@ -7,12 +7,7 @@
 Memory game is a simple card-matching game where players take turns flipping over two cards, trying to find a pair with identical pictures or ranks.
 ### ***Technologies***
   * CSS
-  * JAVA SCRIPT
-  * HTML
-***
-### ***Technologies Used***
-* CSS
-  * JAVA SCRIPT
+  * JAVASCRIPT
   * HTML
 ***
 ### ***Getting Started***
