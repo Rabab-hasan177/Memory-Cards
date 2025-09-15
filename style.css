@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   height: 100vh;
   background-color: palevioletred;
   display: flex;
@@ -26,7 +26,7 @@ padding: 30px;
   transition: transform 0.5s;
 }
 
-.memory-card.flipped {
+.memory-card .{
   transform: rotateY(180deg);
 }
 .memory-card .front,.back{
@@ -40,4 +40,4 @@ padding: 30px;
   background-color: aliceblue;
 border: 2px solid purple;
 }
-
+ */
