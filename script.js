@@ -34,21 +34,11 @@ for (let i = 0; i < fruitImages.length; i++) {
 
   console.log(variable)
 }
-let cardFlipped = false
-let firstCard;
-let secondCard;
 
-const flippingCard = () => {
-
-  if (!cardFlipped) {
-cardFlipped=true
-  }
-  else {
-cardFlipped=false
-  }
-}
-const cardsForClick = document.querySelectorAll(".play-game")
+const cardsForClick = document.querySelectorAll(".memory-card")
 cardsForClick.forEach((card) => {
-  card.addEventListener("click",flippingCard)
+  card.addEventListener("click", () =>{
+  card.classList.toggle("flip")
   console.log("clicked")
+  })
 })
