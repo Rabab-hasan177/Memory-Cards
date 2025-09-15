@@ -1,4 +1,4 @@
-const myContainor = document.querySelector(".play-game")
+const cards = document.querySelector(".play-game")
 const fruitImages = [
   { src: "./pictures/apple.jpg", alt: "apple" },
   { src: "./pictures/banana.jpg", alt: "banana" },
@@ -30,8 +30,28 @@ card.classList.add("memory-card")
 
   let variable = fruitImages[i]
 
-  myContainor.appendChild(card)
+  cards.appendChild(card)
 
   console.log(variable)
 }
+let firstCard;
+let secondCard;
 
+const flippingCard = () => {
+ if ()
+
+}
+
+
+
+
+
+
+
+
+
+
+cards.forEach((card) => {
+  card.addEventListener('click', () => flippingCard)
+  console.log('clicked')
+})
