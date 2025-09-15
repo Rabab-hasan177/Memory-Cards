@@ -15,7 +15,7 @@ const backImage = [{ src: "./pictures/Qmark.png", alt: "qmark" }]
 
 for (let i = 0; i < fruitImages.length; i++) {
   let card = document.createElement("div")
-card.classList.add("memory-card")
+  card.classList.add("memory-card")
   let frontImg = document.createElement("img")
   frontImg.classList.add("front")
   frontImg.setAttribute("src", fruitImages[i].src)
@@ -34,24 +34,21 @@ card.classList.add("memory-card")
 
   console.log(variable)
 }
+let cardFlipped = false
 let firstCard;
 let secondCard;
 
 const flippingCard = () => {
- if ()
 
+  if (!cardFlipped) {
+cardFlipped=true
+  }
+  else {
+cardFlipped=false
+  }
 }
-
-
-
-
-
-
-
-
-
-
-cards.forEach((card) => {
-  card.addEventListener('click', () => flippingCard)
-  console.log('clicked')
+const cardsForClick = document.querySelectorAll(".play-game")
+cardsForClick.forEach((card) => {
+  card.addEventListener("click",flippingCard)
+  console.log("clicked")
 })
