@@ -1,5 +1,4 @@
 const cards = document.querySelector(".play-game")
-let emptyArray = ["",""]
 const fruitImages = [
   { src: "./pictures/apple.jpg", alt: "apple" },
   { src: "./pictures/banana.jpg", alt: "banana" },
@@ -29,47 +28,34 @@ for (let i = 0; i < fruitImages.length; i++) {
     let variable2 = backImage[j]
   }
 
-  let variable = fruitImages[i]
+  // let variable = fruitImages[i]
 
   cards.appendChild(card)
 
-  console.log(variable)
+  // console.log(variable)
 }
+let emptyArray = ["", ""]
 
-for (let i = 0; i < emptyArray.length;i++){
-  // cards.classList.toggle("flip")
-  if(emptyArray[0]!=emptyArray[1])
-  {
-cards.classList.toggle("flip")
+const checkArray = () => {
+  for (let i = 0; i < emptyArray.length; i++) {
+    if (emptyArray[0] === emptyArray[1]) {
+      cards.classList.toggle("flip")
+    } else {
+      cards.classList.toggle("flip")
+    }
   }
-else{
-  cards.classList.toggle("flip")
 }
-
+const playGame = () =>{
+  for (let i = 0; i < fruitImages.length; i++) {
+    const element = fruitImages[i].src
+    emptyArray.push(element)
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const cardsForClick = document.querySelectorAll(".memory-card")
 cardsForClick.forEach((card) => {
-  card.addEventListener("click", () =>{
-  card.classList.toggle("flip")
+  card.addEventListener("click", () => {
+    card.classList.toggle("flip")
 
-  console.log("clicked")
+    console.log("clicked")
   })
 })
