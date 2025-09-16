@@ -34,28 +34,45 @@ for (let i = 0; i < fruitImages.length; i++) {
 
   // console.log(variable)
 }
-let emptyArray = ["", ""]
+
+let emptyArray = []
+let stopClicking = false
 
 const checkArray = () => {
-  for (let i = 0; i < emptyArray.length; i++) {
-    if (emptyArray[0] === emptyArray[1]) {
-      cards.classList.toggle("flip")
-    } else {
-      cards.classList.toggle("flip")
-    }
-  }
-}
-const playGame = () =>{
-  for (let i = 0; i < fruitImages.length; i++) {
-    const element = fruitImages[i].src
-    emptyArray.push(element)
+  stopClicking = true
+  const [first, second] = emptyArray
+
+  const firstImg = first.querySelector(".front")
+  const secondImg = second.querySelector(".front")
+
+  if (firstImg.src === secondImg.src) {
+    emptyArray = []
+    stopClicking = false
+  } else {
+    // from https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout
+    setTimeout(() => {
+      first.classList.remove("flip")
+      second.classList.remove("flip")
+      emptyArray = []
+      stopClicking = false
+    }, 2000)
   }
 }
 const cardsForClick = document.querySelectorAll(".memory-card")
 cardsForClick.forEach((card) => {
   card.addEventListener("click", () => {
-    card.classList.toggle("flip")
+    if (stopClicking) {
+      return
+    }
+    if (emptyArray.includes(card)) {
+      return
+    }
 
+    card.classList.toggle("flip")
+    emptyArray.push(card)
+    if(emptyArray.length === 2){
+      checkArray()
+    }
     console.log("clicked")
   })
 })
