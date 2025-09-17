@@ -1,5 +1,5 @@
 const cards = document.querySelector(".play-game")
-const fruitImages = [
+let fruitImages = [
   { src: "./pictures/apple.jpg", alt: "apple" },
   { src: "./pictures/banana.jpg", alt: "banana" },
   { src: "./pictures/orange.jpg", alt: "orange" },
@@ -12,7 +12,14 @@ const fruitImages = [
   { src: "./pictures/strawberry.jpg", alt: "strawberry" },
 ]
 const backImage = [{ src: "./pictures/Qmark.png", alt: "qmark" }]
-
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[array[i], array[j]] = [array[j], array[i]]
+  }
+  return array
+}
+shuffleArray(fruitImages)
 for (let i = 0; i < fruitImages.length; i++) {
   let card = document.createElement("div")
   card.classList.add("memory-card")
@@ -48,6 +55,13 @@ const checkArray = () => {
   if (firstImg.src === secondImg.src) {
     emptyArray = []
     stopClicking = false
+    firstImg.classList.add("animate__animated", "animate__bounce")
+    secondImg.classList.add("animate__animated", "animate__bounce")
+    setTimeout(() => {
+      ;[firstImg, secondImg].forEach((img) => {
+        img.classList.remove("animate__animated", "animate__bounce")
+      })
+    }, 2000)
   } else {
     // from https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout
     setTimeout(() => {
@@ -55,7 +69,7 @@ const checkArray = () => {
       second.classList.remove("flip")
       emptyArray = []
       stopClicking = false
-    }, 2000)
+    }, 1000)
   }
 }
 const cardsForClick = document.querySelectorAll(".memory-card")
@@ -70,12 +84,9 @@ cardsForClick.forEach((card) => {
 
     card.classList.toggle("flip")
     emptyArray.push(card)
-    if(emptyArray.length === 2){
+    if (emptyArray.length === 2) {
       checkArray()
     }
     console.log("clicked")
   })
 })
- //adding an eventlistener to the first HTML page
-document.querySelector('#clickbutton').addEventListener("click", () => {
-  window.location.href ='./index.html' } )

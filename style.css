@@ -44,3 +44,7 @@ body {
 .memory-card .back {
   background-color: aliceblue;
 }
+.animate__animated.animate__bounce {
+  animation: bounce;
+  animation-duration: 2s;
+}
