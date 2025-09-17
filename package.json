@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "dependencies": {
+    "fireworks-js": "^2.10.8"
+  }
+}

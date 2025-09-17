@@ -44,7 +44,26 @@ body {
 .memory-card .back {
   background-color: aliceblue;
 }
-.animate__animated.animate__bounce {
-  animation: bounce;
-  animation-duration: 2s;
+@keyframes matchedBounce {
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
+    transform: rotateY(180deg) translate3d(0, 0, 0);
+  }
+  40%,
+  43% {
+    transform: rotateY(180deg) translate3d(0, -18%, 0);
+  }
+  70% {
+    transform: rotateY(180deg) translate3d(0, -9%, 0);
+  }
+  90% {
+    transform: rotateY(180deg) translate3d(0, -2%, 0);
+  }
+}
+
+.memory-card.matched {
+  animation: matchedBounce 0.8s ease;
 }

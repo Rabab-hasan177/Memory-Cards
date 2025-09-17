@@ -1,4 +1,59 @@
+// import Fireworks from "fireworks-js"
+
 const cards = document.querySelector(".play-game")
+
+const container = document.querySelector(".container")
+const canvas = document.getElementById("fireworks-canvas")
+const fireworks = new Fireworks(canvas, {
+  autoresize: true,
+  opacity: 0.5,
+  acceleration: 1.05,
+  friction: 0.97,
+  gravity: 1.5,
+  particles: 50,
+  traceLength: 3,
+  traceSpeed: 10,
+  explosion: 5,
+  intensity: 30,
+  flickering: 50,
+  lineStyle: "round",
+  hue: {
+    min: 0,
+    max: 360,
+  },
+  delay: {
+    min: 30,
+    max: 60,
+  },
+  rocketsPoint: {
+    min: 50,
+    max: 50,
+  },
+  lineWidth: {
+    explosion: {
+      min: 1,
+      max: 3,
+    },
+    trace: {
+      min: 1,
+      max: 2,
+    },
+  },
+  brightness: {
+    min: 50,
+    max: 80,
+  },
+  decay: {
+    min: 0.015,
+    max: 0.03,
+  },
+  mouse: {
+    click: false,
+    move: false,
+    max: 1,
+  },
+})
+
 let fruitImages = [
   { src: "./pictures/apple.jpg", alt: "apple" },
   { src: "./pictures/banana.jpg", alt: "banana" },
@@ -55,13 +110,17 @@ const checkArray = () => {
   if (firstImg.src === secondImg.src) {
     emptyArray = []
     stopClicking = false
-    firstImg.classList.add("animate__animated", "animate__bounce")
-    secondImg.classList.add("animate__animated", "animate__bounce")
-    setTimeout(() => {
-      ;[firstImg, secondImg].forEach((img) => {
-        img.classList.remove("animate__animated", "animate__bounce")
-      })
-    }, 2000)
+    ;[first, second].forEach((image) => {
+      image.classList.add("matched")
+      image.addEventListener(
+        "animationend",
+        () => cardEl.classList.remove("matched"),
+        { once: true }
+      )
+    })
+    fireworks.start()
+    setTimeout(() => fireworks.stop(), 2000)
+    stopClicking = false
   } else {
     // from https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout
     setTimeout(() => {
