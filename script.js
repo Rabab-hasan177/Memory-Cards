@@ -126,15 +126,13 @@ const checkArray = () => {
       playSound(fruitName)
       emptyArray = []
       stopClicking = false
+
       const allMatched = document.querySelectorAll(".memory-card.matched")
       if (allMatched.length === fruitImages.length) {
         fireworks.start()
-        setTimeout(() => fireworks.stop(), 5000)
+        setTimeout(() => fireworks.stop(), 10000)
       }
     })
-    fireworks.start()
-    setTimeout(() => fireworks.stop(), 3000)
-    stopClicking = false
   } else {
     // from https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout
     setTimeout(() => {
