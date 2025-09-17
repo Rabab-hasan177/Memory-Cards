@@ -1,10 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Caprasimo&display=swap");
+
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  font-family: "Caprasimo", serif;
+
+  font-size: 16px;
 }
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 20 px;
+  min-height: 100vh;
+  background-image: url("https://img.freepik.com/premium-vector/kawaii-happy-fruit-seamless-pattern-cute-cartoon-fruits-background_1159585-562.jpg?semt=ais_incoming&w=740&q=80");
+}
+h1 {
+  font-size: 3rem;
+  background-color: rgba(237, 229, 180, 0.9);
+  border-radius: 20px;
+  padding: 20px;
+
+  color: #603c9d;
+}
+button {
+    color: #603c9d;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  border: 0;
+  background-color:rgba(237, 229, 180, 0.9);
+  border-radius: 20px;
+  padding: 20px;
 }

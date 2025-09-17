@@ -4,7 +4,7 @@ const cards = document.querySelector(".play-game")
 
 const container = document.querySelector(".container")
 const canvas = document.getElementById("fireworks-canvas")
-const fireworks = new Fireworks(canvas, {
+const fireworks = new Fireworks.default(canvas, {
   autoresize: true,
   opacity: 0.5,
   acceleration: 1.05,
@@ -119,7 +119,7 @@ const checkArray = () => {
       )
     })
     fireworks.start()
-    setTimeout(() => fireworks.stop(), 2000)
+    setTimeout(() => fireworks.stop(), 3000)
     stopClicking = false
   } else {
     // from https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout
@@ -135,6 +135,10 @@ const cardsForClick = document.querySelectorAll(".memory-card")
 cardsForClick.forEach((card) => {
   card.addEventListener("click", () => {
     if (stopClicking) {
+      return
+    }
+    if(card.classList.contains("matched"))
+    {
       return
     }
     if (emptyArray.includes(card)) {
