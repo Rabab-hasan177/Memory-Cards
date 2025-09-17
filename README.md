@@ -1,7 +1,7 @@
 # Memory cards
 ## Date: 11/9/2025
 ### By: Rabab Hasan Isa
-#### [GitHub] https://github.com/Rabab-hasan177/simple-game.git|
+#### [GitHub] https://github.com/Rabab-hasan177
 ***
 ### Description
 Memory game is a simple card-matching game where players take turns flipping over two cards, trying to find a pair with identical pictures or ranks.
@@ -17,10 +17,10 @@ Memory game is a simple card-matching game where players take turns flipping ove
 ![image](./Screenshot%20(20).png)
 ![image](./Screenshot%20(21).png)
 
-### ***Future Updates***
-- [ ] Future Update 1
-- [ ] Future Update 2
-- [x] Completed Update
-- [x] ~~Strikethrough~~ Items Also
+### ***Future Updates*
+-Hints
+-Fireworks [done]
+- Bounce[Done]
 ***
 ### ***Credits***
+https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout
