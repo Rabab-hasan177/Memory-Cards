@@ -12,8 +12,8 @@ body {
   align-items: center;
 }
 .play-game {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;

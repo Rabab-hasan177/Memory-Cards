@@ -4,7 +4,7 @@
 #### [GitHub] https://github.com/Rabab-hasan177
 ***
 ### Description
-Memory game is a simple card-matching game where players take turns flipping over two cards, trying to find a pair with identical pictures or ranks. game link [here](sloppy-time.surge.sh)
+Memory game is a simple card-matching game where players take turns flipping over two cards, trying to find a pair with identical pictures or ranks.
 ### ***Technologies***
   * CSS
   * JAVASCRIPT
@@ -12,7 +12,7 @@ Memory game is a simple card-matching game where players take turns flipping ove
 ***
 ### ***Getting Started***
  https://github.com/Rabab-hasan177/Memory-Cards.git
-game link [here](sloppy-time.surge.sh)
+game link [here](memo-game-roro-ga.surge.sh)
 
 ***
 ### ***Screenshots***

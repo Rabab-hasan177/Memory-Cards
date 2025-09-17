@@ -1,6 +1,4 @@
 const cards = document.querySelector(".play-game")
-
-const container = document.querySelector(".container")
 const canvas = document.getElementById("fireworks-canvas")
 const fireworks = new Fireworks.default(canvas, {
   autoresize: true,
@@ -103,7 +101,7 @@ for (let i = 0; i < fruitImages.length; i++) {
     backImg.classList.add("back")
     backImg.setAttribute("src", backImage[j].src)
     card.appendChild(backImg)
-    let variable2 = backImage[j]
+
   }
 
   cards.appendChild(card)
@@ -161,6 +159,5 @@ cardsForClick.forEach((card) => {
     if (emptyArray.length === 2) {
       checkArray()
     }
-    console.log("clicked")
   })
 })
