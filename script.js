@@ -1,5 +1,3 @@
-// import Fireworks from "fireworks-js"
-
 const cards = document.querySelector(".play-game")
 
 const container = document.querySelector(".container")
@@ -67,6 +65,23 @@ let fruitImages = [
   { src: "./pictures/strawberry.jpg", alt: "strawberry" },
 ]
 const backImage = [{ src: "./pictures/Qmark.png", alt: "qmark" }]
+const fruitSound = {
+  orange: "./Alaa Saad Burtogala علاء سعد البرتقالة.mp3",
+  apple: "./Alaa Saad Al Tufaha علاء سعد التفاحة.mp3",
+  banana: "./better-banana-58341.mp3",
+  pear1: "./نشيد الكمثرى أناشيد قناة مجد للأطفال القديمة.mp3",
+  strawberry: "./الفراولة طيور الجنة.mp3",
+}
+let audioPlayer = new Audio()
+
+const playSound = (fruitName) => {
+  if (fruitSound[fruitName]) {
+    audioPlayer.pause()
+    audioPlayer.currentTime = 0
+    audioPlayer.src = fruitSound[fruitName]
+    audioPlayer.play()
+  }
+}
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
@@ -81,6 +96,7 @@ for (let i = 0; i < fruitImages.length; i++) {
   let frontImg = document.createElement("img")
   frontImg.classList.add("front")
   frontImg.setAttribute("src", fruitImages[i].src)
+  frontImg.setAttribute("alt", fruitImages[i].alt)
   card.appendChild(frontImg)
   for (let j = 0; j < backImage.length; j++) {
     let backImg = document.createElement("img")
@@ -90,11 +106,7 @@ for (let i = 0; i < fruitImages.length; i++) {
     let variable2 = backImage[j]
   }
 
-  // let variable = fruitImages[i]
-
   cards.appendChild(card)
-
-  // console.log(variable)
 }
 
 let emptyArray = []
@@ -108,15 +120,17 @@ const checkArray = () => {
   const secondImg = second.querySelector(".front")
 
   if (firstImg.src === secondImg.src) {
-    emptyArray = []
-    stopClicking = false
     ;[first, second].forEach((image) => {
       image.classList.add("matched")
-      image.addEventListener(
-        "animationend",
-        () => cardEl.classList.remove("matched"),
-        { once: true }
-      )
+      const fruitName = firstImg.alt
+      playSound(fruitName)
+      emptyArray = []
+      stopClicking = false
+      const allMatched = document.querySelectorAll(".memory-card.matched")
+      if (allMatched.length === fruitImages.length) {
+        fireworks.start()
+        setTimeout(() => fireworks.stop(), 5000)
+      }
     })
     fireworks.start()
     setTimeout(() => fireworks.stop(), 3000)
@@ -137,8 +151,7 @@ cardsForClick.forEach((card) => {
     if (stopClicking) {
       return
     }
-    if(card.classList.contains("matched"))
-    {
+    if (card.classList.contains("matched")) {
       return
     }
     if (emptyArray.includes(card)) {
