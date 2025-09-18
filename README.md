@@ -18,6 +18,10 @@ game link [here](memo-game-roro-ga.surge.sh)
 ### ***Screenshots***
 ![image](./Screenshot%20(20).png)
 ![image](./Screenshot%20(21).png)
+last laypout
+![image](./Screenshot%20(33).png)
+![image](./Screenshot%20(34).png)
+
 
 ### ***Future Updates*
 -Hints
